@@ -12,10 +12,6 @@
   </style>
 </head>
 <body>
-    <div class="links-wrapper">
-        <!-- Content from your CSS -->
-    </div>
-    
     <div class="current-time">
         <script>
             function updateTime() {
@@ -23,16 +19,12 @@
                 const hours = now.getHours().toString().padStart(2, '0');
                 const minutes = now.getMinutes().toString().padStart(2, '0');
                 const seconds = now.getSeconds().toString().padStart(2, '0');
-                document.querySelector('.current-time').textContent = `${hours}:${minutes}:${seconds}`;
+                document.querySelector('.current-time').textContent = `${hours}:${minutes}`;
             }
 
             setInterval(updateTime, 1000); // Update time every second
             updateTime(); // Initial call
         </script>
     </div>
-    
-    <footer class="footer">
-        <!-- Content from your CSS -->
-    </footer>
 </body>
 </html>
