@@ -19,7 +19,7 @@
     }
 
     .date {
-      font-size: .5em; /* Smaller font size for the date */
+      font-size: 0.5em; /* Smaller font size for the date */
     }
 
     .time {
@@ -28,32 +28,30 @@
   </style>
 </head>
 <body>
-    <div class="current-time">
-        <div class="time"></div>
-        <div class="date"></div>
-    </div>
+  <div class="current-time">
+    <div class="time"></div>
+    <div class="date"></div>
+  </div>
 
-    <script>
-        function updateTime() {
-            const now = new Date();
-            const day = now.getDate().toString().padStart(2, '0');
-            const month = (now.getMonth() + 1).toString().padStart(2, '0'); // Months are 0-based
-            const year = now.getFullYear();
-            const hours = now.getHours().toString().padStart(2, '0');
-            const minutes = now.getMinutes().toString().padStart(2, '0');
-            const seconds = now.getSeconds().toString().padStart(2, '0');
+  <script>
+    function updateTime() {
+      const now = new Date();
+      const day = now.getDate().toString().padStart(2, '0');
+      const month = (now.getMonth() + 1).toString().padStart(2, '0'); // Months are 0-based
+      const year = now.getFullYear();
+      const hours = now.getHours().toString().padStart(2, '0');
+      const minutes = now.getMinutes().toString().padStart(2, '0');
+      const seconds = now.getSeconds().toString().padStart(2, '0');
 
-            const date = `${day}.${month}.${year}`;
-            const time = `${hours}:${minutes}`;
+      const date = `${day}.${month}.${year}`;
+      const time = `${hours}:${minutes}`;
 
-            document.querySelector('.date').textContent = date;
-            document.querySelector('.time').textContent = time;
-        }
+      document.querySelector('.date').textContent = date;
+      document.querySelector('.time').textContent = time;
+    }
 
-        setInterval(updateTime, 1000); // Update every second
-        updateTime(); // Initial call
-    </script>
+    setInterval(updateTime, 1000); // Update every second
+    updateTime(); // Initial call
+  </script>
 </body>
 </html>
-
-
